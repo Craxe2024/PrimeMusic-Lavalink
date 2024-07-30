@@ -32,7 +32,7 @@ async function play(client, interaction) {
             const embed = new EmbedBuilder()
                 .setColor('#ff0000')
                 .setTitle('Voice Channel Required')
-                .setDescription('❌ You need to be in a voice channel to use this command.');
+                .setDescription('❌ Silahkan Masuk Kedalam Voice Chat Terlebih Dahulu!.');
 
             await interaction.reply({ embeds: [embed], ephemeral: true });
             return;
@@ -84,7 +84,7 @@ async function play(client, interaction) {
             const errorEmbed = new EmbedBuilder()
                 .setColor(config.embedColor)
                 .setTitle('Error')
-                .setDescription('❌ No results found.');
+                .setDescription('❌ Tidak ada hasil.');
 
             await interaction.editReply({ embeds: [errorEmbed] });
             return;
@@ -100,7 +100,7 @@ async function play(client, interaction) {
                     iconURL: config.CheckmarkIcon,
                     url: config.SupportServer
                 })
-                .setDescription('**➡️ Your request has been successfully processed.**\n**➡️ Please use buttons to control playback**')
+                .setDescription('**➡️ Music anda sedang di proses!.**\n**➡️ Gunakan tombol untuk mengontrol pemutaran**')
                  .setFooter({ text: '🎶 Enjoy your music!'}),
 
             new EmbedBuilder()
@@ -110,7 +110,7 @@ async function play(client, interaction) {
                     iconURL: config.CheckmarkIcon,
                     url: config.SupportServer
                 })
-                .setDescription('**➡️ Your request has been successfully processed.**\n**➡️ Please use buttons to control playback**')
+                .setDescription('**➡️ Music anda sedang di proses!.**\n**➡️ Gunakan tombol untuk mengontrol pemutaran**')
                  .setFooter({ text: '🎶 Enjoy your music!'}),
 
             new EmbedBuilder()
@@ -120,7 +120,7 @@ async function play(client, interaction) {
                     iconURL: config.CheckmarkIcon,
                     url: config.SupportServer
                 })
-                .setDescription('**➡️ Your request has been successfully processed.**\n**➡️ Please use buttons to control playback**')
+                .setDescription('**➡️ Music anda sedang di proses!.**\n**➡️ Gunakan tombol untuk mengontrol pemutaran**')
                 .setFooter({ text: '🎶 Enjoy your music!'})
         ];
 
@@ -132,7 +132,7 @@ async function play(client, interaction) {
         const errorEmbed = new EmbedBuilder()
             .setColor('#ff0000')
             .setTitle('Error')
-            .setDescription('❌ An error occurred while processing your request.');
+            .setDescription('❌ Error njir.');
 
         await interaction.editReply({ embeds: [errorEmbed] });
     }
@@ -140,11 +140,11 @@ async function play(client, interaction) {
 
 module.exports = {
     name: "play",
-    description: "Play a song from a name or link",
+    description: "Putar lagu menggunakan judul atau link",
     permissions: "0x0000000000000800",
     options: [{
         name: 'name',
-        description: 'Enter song name / link or playlist',
+        description: 'Masukkan judul / link atau playlist',
         type: ApplicationCommandOptionType.String,
         required: true
     }],
